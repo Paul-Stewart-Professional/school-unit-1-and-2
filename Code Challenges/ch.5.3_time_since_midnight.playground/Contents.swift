@@ -28,3 +28,5 @@ func getMinutesSinceMidnight() -> Int {
 }
 
 print(getMinutesSinceMidnight())
+
+print("change")
