@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var listOfWords = ["avocado", "fishing", "pelican", "blender", "backpack", "sillygoose", "antipsychotics", "spiderweb", "William"]
+    var listOfWords = ["avocado", "fishing", "pelican", "blender", "backpack", "sillygoose", "antipsychotics", "spiderweb", "william"]
     
     let incorrectMovesAllowed = 7
     
