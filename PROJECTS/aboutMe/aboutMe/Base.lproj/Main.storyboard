@@ -4,51 +4,276 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Bio-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="aboutMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paul Stewart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSE-3v-Vo7">
+                                <rect key="frame" x="16" y="230" width="215.33333333333334" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="Wvj-5J-OM2">
+                                <rect key="frame" x="152" y="278" width="225" height="345"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wvj-5J-OM2" secondAttribute="height" multiplier="1079:1655" id="8ur-B7-to6"/>
+                                    <constraint firstAttribute="width" constant="225" id="hTg-7o-0Hb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age: 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8B-rp-NLi">
+                                <rect key="frame" x="17" y="318" width="81" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home: Lehi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjP-RD-bbO">
+                                <rect key="frame" x="17" y="359" width="121" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav Color:  Pink" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nup-ip-Qzj">
+                                <rect key="frame" x="16.999999999999993" y="400" width="113.33333333333331" height="51"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav Food:  Pasta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4m-vc-xhn">
+                                <rect key="frame" x="17" y="466" width="108" height="51"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highschool: SAHS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b88-Jp-GC1">
+                                <rect key="frame" x="17" y="532" width="127" height="51"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="b88-Jp-GC1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="5hK-KA-L4B"/>
+                            <constraint firstItem="Nup-ip-Qzj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="EI6-Zh-nXg"/>
+                            <constraint firstItem="cjP-RD-bbO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="FSz-hJ-koC"/>
+                            <constraint firstItem="r4m-vc-xhn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="QHx-aH-958"/>
+                            <constraint firstItem="Nup-ip-Qzj" firstAttribute="top" secondItem="cjP-RD-bbO" secondAttribute="bottom" constant="15" id="QKt-bc-Gsh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wvj-5J-OM2" secondAttribute="trailing" constant="25" id="Ueh-9p-uUr"/>
+                            <constraint firstItem="Wvj-5J-OM2" firstAttribute="top" secondItem="kSE-3v-Vo7" secondAttribute="bottom" constant="7.3300000000000001" id="aEw-j9-BF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b88-Jp-GC1" secondAttribute="bottom" constant="186" id="avl-r0-Xam"/>
+                            <constraint firstItem="r4m-vc-xhn" firstAttribute="top" secondItem="Nup-ip-Qzj" secondAttribute="bottom" constant="15" id="fMH-Kh-lyx"/>
+                            <constraint firstItem="cjP-RD-bbO" firstAttribute="top" secondItem="X8B-rp-NLi" secondAttribute="bottom" constant="15" id="gnP-g4-cE1"/>
+                            <constraint firstItem="X8B-rp-NLi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="hIk-Xz-Htd"/>
+                            <constraint firstItem="b88-Jp-GC1" firstAttribute="top" secondItem="r4m-vc-xhn" secondAttribute="bottom" constant="15" id="i6L-bl-FKR"/>
+                            <constraint firstItem="kSE-3v-Vo7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="171" id="yem-01-1xS"/>
+                            <constraint firstItem="kSE-3v-Vo7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zrd-Bo-aHf"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7jQ-Li-rhY"/>
+                    <tabBarItem key="tabBarItem" title="Bio" image="questionmark" catalog="system" id="7jQ-Li-rhY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1170.2290076335878" y="4.9295774647887329"/>
         </scene>
-        <!--View Controller-->
+        <!--Family-->
         <scene sceneID="tAq-9h-g04">
             <objects>
                 <viewController id="fL3-Mp-4aT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lb8-JF-gFN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mr7-uC-YwV" userLabel="Outer Stack">
+                                <rect key="frame" x="16" y="125" width="361" height="614"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i8s-SW-KC1" userLabel="Dad and Mom Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="191.33333333333334"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pj3-Cv-zb3" userLabel="Dad Stack">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="191.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Rick (my Dad)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-7g-iLj">
+                                                        <rect key="frame" x="25.666666666666657" y="0.0" width="121" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dad" translatesAutoresizingMaskIntoConstraints="NO" id="W7x-q5-3gb">
+                                                        <rect key="frame" x="0.0" y="29" width="172.66666666666666" height="162.33333333333334"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kdi-8U-awq">
+                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="191.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Jen (my Mom)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiY-6o-w7e">
+                                                        <rect key="frame" x="25.333333333333336" y="0.0" width="121.33333333333331" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mom" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-bh-AR4">
+                                                        <rect key="frame" x="0.0" y="29" width="172.33333333333334" height="162.33333333333334"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qxh-ip-A8j">
+                                        <rect key="frame" x="0.0" y="211.33333333333331" width="361" height="191.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="230-Eb-b9N">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="191.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Alex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxe-UC-aYD">
+                                                        <rect key="frame" x="67.333333333333329" y="0.0" width="37.666666666666671" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alex" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-fg-aZu">
+                                                        <rect key="frame" x="0.0" y="29" width="172.66666666666666" height="162.33333333333334"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PGQ-bt-kmA">
+                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="191.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Annalynn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-Nj-Vx8">
+                                                        <rect key="frame" x="45" y="0.0" width="82" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ann" translatesAutoresizingMaskIntoConstraints="NO" id="Tfx-p3-lwa">
+                                                        <rect key="frame" x="0.0" y="29" width="172.33333333333334" height="162.33333333333334"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Vr7-2V-oZx">
+                                        <rect key="frame" x="0.0" y="422.66666666666657" width="361" height="191.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I7a-5v-ojE">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="191.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="James" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-3D-YxB">
+                                                        <rect key="frame" x="57.333333333333329" y="0.0" width="57.666666666666671" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="james" translatesAutoresizingMaskIntoConstraints="NO" id="MVS-Fr-wmY">
+                                                        <rect key="frame" x="0.0" y="29" width="172.66666666666666" height="162.33333333333334"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iNQ-u9-Dn9">
+                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="191.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Kari" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-TZ-2hB">
+                                                        <rect key="frame" x="67.666666666666657" y="0.0" width="36.666666666666657" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kari" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-QR-d83">
+                                                        <rect key="frame" x="0.0" y="29" width="172.33333333333334" height="162.33333333333334"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="My Family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhy-Kg-iBL">
+                                <rect key="frame" x="16" y="76.333333333333329" width="167" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CXY-am-sXD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.33725490196078434" green="0.52941176470588236" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uhy-Kg-iBL" firstAttribute="top" secondItem="CXY-am-sXD" secondAttribute="top" constant="17.329999999999998" id="0bZ-A0-5kG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mr7-uC-YwV" secondAttribute="trailing" id="46v-k7-SIy"/>
+                            <constraint firstItem="Mr7-uC-YwV" firstAttribute="top" secondItem="lb8-JF-gFN" secondAttribute="top" constant="125" id="OHI-Yt-CzH"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Mr7-uC-YwV" secondAttribute="bottom" constant="30" id="Qq6-P3-ksD"/>
+                            <constraint firstItem="Mr7-uC-YwV" firstAttribute="top" secondItem="uhy-Kg-iBL" secondAttribute="bottom" constant="8" symbolic="YES" id="Vnr-AU-geP"/>
+                            <constraint firstItem="uhy-Kg-iBL" firstAttribute="leading" secondItem="CXY-am-sXD" secondAttribute="leading" constant="16" id="WNk-pZ-Hyr"/>
+                            <constraint firstItem="Mr7-uC-YwV" firstAttribute="leading" secondItem="lb8-JF-gFN" secondAttribute="leadingMargin" id="fAF-gV-7xM"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Family" image="figure.2.and.child.holdinghands" catalog="system" id="A4K-PI-uTE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4O-zI-xJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1904.5801526717557" y="4.9295774647887329"/>
         </scene>
-        <!--View Controller-->
+        <!--Hobbies-->
         <scene sceneID="CDo-p8-2Ng">
             <objects>
                 <viewController id="Vtt-Pe-KUi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4aL-a0-0Na">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" fixedFrame="YES" text="My Hobbies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-eD-3AO">
+                                <rect key="frame" x="16" y="78" width="198" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fkv-VI-Axa">
+                                <rect key="frame" x="0.0" y="175" width="393" height="562"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ACRX" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-ei-r83">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="125.66666666666667"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NSX" translatesAutoresizingMaskIntoConstraints="NO" id="q8A-o5-3ou">
+                                        <rect key="frame" x="0.0" y="145.66666666666669" width="393" height="125.33333333333331"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="porsche" translatesAutoresizingMaskIntoConstraints="NO" id="LkV-eT-H80">
+                                        <rect key="frame" x="0.0" y="291" width="393" height="125.66666666666669"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countach" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Px-Fe1">
+                                        <rect key="frame" x="0.0" y="436.66666666666663" width="393" height="125.33333333333337"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lYY-Px-Fe1" firstAttribute="top" secondItem="LkV-eT-H80" secondAttribute="bottom" constant="20" id="HId-xg-Oc3"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Cars (and photography)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMi-h3-hwZ">
+                                <rect key="frame" x="16" y="127" width="207" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YRR-wb-RqB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.62352941176470589" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fkv-VI-Axa" secondAttribute="bottom" constant="115" id="79n-Ut-trx"/>
+                            <constraint firstAttribute="trailing" secondItem="fkv-VI-Axa" secondAttribute="trailing" id="XeE-Zd-oaQ"/>
+                            <constraint firstItem="fkv-VI-Axa" firstAttribute="leading" secondItem="YRR-wb-RqB" secondAttribute="leading" id="loB-rm-bXl"/>
+                            <constraint firstItem="fkv-VI-Axa" firstAttribute="top" secondItem="4aL-a0-0Na" secondAttribute="top" priority="999" constant="175" id="sTK-Mt-csN"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Hobbies" image="gamecontroller.fill" catalog="system" id="mxO-mM-Iuf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UfB-Dh-29z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,11 +285,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BWu-83-uHr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7L4-eh-Y61">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kme-y9-qae"/>
+                        <segue destination="fL3-Mp-4aT" kind="relationship" relationship="viewControllers" id="Rfc-WT-Nwr"/>
+                        <segue destination="Vtt-Pe-KUi" kind="relationship" relationship="viewControllers" id="Rfz-jd-o2C"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8w8-9q-ZzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -73,8 +301,19 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="ACRX" width="4000" height="2252"/>
+        <image name="NSX" width="3573" height="2012"/>
+        <image name="alex" width="1079" height="1469"/>
+        <image name="ann" width="986" height="1435"/>
+        <image name="countach" width="3003" height="2145"/>
+        <image name="dad" width="1079" height="1513"/>
+        <image name="figure.2.and.child.holdinghands" catalog="system" width="128" height="90"/>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
+        <image name="james" width="1080" height="1358"/>
+        <image name="kari" width="941" height="1339"/>
+        <image name="me" width="1079" height="1655"/>
+        <image name="mom" width="1080" height="1357"/>
+        <image name="porsche" width="3843" height="2164"/>
+        <image name="questionmark" catalog="system" width="94" height="128"/>
     </resources>
 </document>
