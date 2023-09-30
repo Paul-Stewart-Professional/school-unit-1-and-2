@@ -27,9 +27,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="156" id="cuo-ok-amI"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="sSM-j3-0eH" appends="YES" id="7ug-77-15n"/>
-                                                </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="XGE-ii-5js">
                                                 <rect key="frame" x="0.0" y="186" width="150" height="150"/>
@@ -113,17 +110,106 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tappableView" destination="T8y-Kg-DD2" id="ZGe-6g-z07"/>
+                        <outlet property="alexPic" destination="JyZ-05-vyi" id="rNO-FF-MSM"/>
+                        <outlet property="annPic" destination="8rZ-FM-8uE" id="WDf-km-J2y"/>
+                        <outlet property="dadPic" destination="T8y-Kg-DD2" id="KdK-tH-kHC"/>
+                        <outlet property="jamesPic" destination="d9Y-ZB-4TW" id="WVz-wF-EOb"/>
+                        <outlet property="kariPic" destination="d7J-dD-3YS" id="gQG-m8-GAS"/>
+                        <outlet property="mePic" destination="XGE-ii-5js" id="cLR-Eg-bht"/>
+                        <outlet property="momPic" destination="6NJ-XM-7Wa" id="obh-fB-qFe"/>
+                        <outlet property="talaPic" destination="K1k-JL-6g4" id="MjE-Rp-6jO"/>
+                        <segue destination="Xmf-zj-bwn" kind="show" identifier="toDetailView" id="Qnm-Be-5JT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="sSM-j3-0eH">
-                    <connections>
-                        <action selector="dadTapped:" destination="BYZ-38-t0r" id="iaj-EG-wQO"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ffo-Ed-Vkz">
+            <objects>
+                <viewController id="Xmf-zj-bwn" customClass="DetailViewController" customModule="familyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aFO-pA-B9D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jqq-wC-ziI">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="318" id="rSh-nR-yVb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is their name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJS-XC-xdQ">
+                                <rect key="frame" x="16" y="326" width="361" height="43"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is their age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haS-zp-h0P">
+                                <rect key="frame" x="16" y="389" width="361" height="24.666666666666686"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is their fav show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-dN-Vld">
+                                <rect key="frame" x="16" y="429.66666666666669" width="361" height="24.666666666666686"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is their fav drink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7L-an-esI">
+                                <rect key="frame" x="16" y="470.33333333333331" width="361" height="25"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CB3-hJ-kRE">
+                                <rect key="frame" x="0.0" y="556" width="393" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q91-5k-66a">
+                                <rect key="frame" x="16" y="511.33333333333326" width="361" height="25"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qqU-CZ-rOX"/>
+                        <color key="backgroundColor" white="0.32192416959999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q91-5k-66a" firstAttribute="leading" secondItem="qqU-CZ-rOX" secondAttribute="leading" constant="16" id="7Bk-Xl-qXZ"/>
+                            <constraint firstItem="u5w-dN-Vld" firstAttribute="top" secondItem="haS-zp-h0P" secondAttribute="bottom" constant="16" id="90a-mn-VBn"/>
+                            <constraint firstItem="jqq-wC-ziI" firstAttribute="leading" secondItem="qqU-CZ-rOX" secondAttribute="leading" id="BZr-Ld-sqC"/>
+                            <constraint firstItem="qqU-CZ-rOX" firstAttribute="trailing" secondItem="u5w-dN-Vld" secondAttribute="trailing" constant="16" id="BdH-Dz-x9f"/>
+                            <constraint firstItem="u5w-dN-Vld" firstAttribute="leading" secondItem="qqU-CZ-rOX" secondAttribute="leading" constant="16" id="FuZ-S1-pR8"/>
+                            <constraint firstItem="Q91-5k-66a" firstAttribute="top" secondItem="g7L-an-esI" secondAttribute="bottom" constant="16" id="HyQ-Tw-CKB"/>
+                            <constraint firstItem="HJS-XC-xdQ" firstAttribute="leading" secondItem="qqU-CZ-rOX" secondAttribute="leading" constant="16" id="NUm-ug-ZKY"/>
+                            <constraint firstItem="qqU-CZ-rOX" firstAttribute="trailing" secondItem="g7L-an-esI" secondAttribute="trailing" constant="16" id="Nwd-b6-CZB"/>
+                            <constraint firstItem="qqU-CZ-rOX" firstAttribute="trailing" secondItem="Q91-5k-66a" secondAttribute="trailing" constant="16" id="Olf-I7-GML"/>
+                            <constraint firstItem="g7L-an-esI" firstAttribute="leading" secondItem="qqU-CZ-rOX" secondAttribute="leading" constant="16" id="VFe-sG-9Gd"/>
+                            <constraint firstItem="HJS-XC-xdQ" firstAttribute="top" secondItem="jqq-wC-ziI" secondAttribute="bottom" constant="8" symbolic="YES" id="Y47-E0-75I"/>
+                            <constraint firstItem="qqU-CZ-rOX" firstAttribute="trailing" secondItem="haS-zp-h0P" secondAttribute="trailing" constant="16" id="YuV-EP-y94"/>
+                            <constraint firstItem="g7L-an-esI" firstAttribute="top" secondItem="u5w-dN-Vld" secondAttribute="bottom" constant="16" id="baD-O5-VMY"/>
+                            <constraint firstItem="haS-zp-h0P" firstAttribute="leading" secondItem="qqU-CZ-rOX" secondAttribute="leading" constant="16" id="e6l-9R-rBW"/>
+                            <constraint firstItem="qqU-CZ-rOX" firstAttribute="trailing" secondItem="HJS-XC-xdQ" secondAttribute="trailing" constant="16" id="jwF-dM-Mka"/>
+                            <constraint firstItem="jqq-wC-ziI" firstAttribute="top" secondItem="qqU-CZ-rOX" secondAttribute="top" id="nNj-rZ-AVO"/>
+                            <constraint firstItem="jqq-wC-ziI" firstAttribute="trailing" secondItem="qqU-CZ-rOX" secondAttribute="trailing" id="qac-2A-8kW"/>
+                            <constraint firstItem="haS-zp-h0P" firstAttribute="top" secondItem="HJS-XC-xdQ" secondAttribute="bottom" constant="20" id="rUD-hb-EFj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2e5-9v-tAW"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="haS-zp-h0P" id="BaX-CW-yXF"/>
+                        <outlet property="dreamCar" destination="CB3-hJ-kRE" id="CfL-8s-ByI"/>
+                        <outlet property="favDrinkLabel" destination="g7L-an-esI" id="thu-k7-Gky"/>
+                        <outlet property="favShowLabel" destination="u5w-dN-Vld" id="dqj-Zy-6cr"/>
+                        <outlet property="mainImage" destination="jqq-wC-ziI" id="3K9-vw-Rqs"/>
+                        <outlet property="nameLabel" destination="HJS-XC-xdQ" id="cD4-Xn-MSf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZP-pe-O8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220.6106870229007" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
