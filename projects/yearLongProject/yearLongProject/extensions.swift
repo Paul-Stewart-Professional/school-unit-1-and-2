@@ -30,3 +30,10 @@ extension UIView {
         layer.borderWidth = 1
     }
 }
+
+extension UISegmentedControl {
+    func setHeight() {
+        let segmentedControl = UISegmentedControl(items: ["Segment1", "Segment2"])
+            segmentedControl.frame.size.height = 50.0
+    }
+}

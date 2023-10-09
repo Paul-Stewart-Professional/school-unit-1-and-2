@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IMG_6724.jpg",
-      "idiom" : "universal"
+      "filename" : "Screenshot 2023-10-06 at 8.12.39 AM.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
