@@ -88,9 +88,10 @@ class EmojiTableViewController: UITableViewController {
 //        content.text = "\(emoji.symbol) - \(emoji.name)"
 //        content.secondaryText =  emoji.description
 //        cell.contentConfiguration = content
-        cell.topLabel.text = "\(emoji.symbol) - \(emoji.name)"
-        cell.bottomLabel.text = emoji.description
-
+//        cell.topLabel.text = "\(emoji.symbol) - \(emoji.name)"
+//        cell.bottomLabel.text = emoji.description
+        cell.update(with: emoji)
+        cell.showsReorderControl = true
         return cell
     }
 
