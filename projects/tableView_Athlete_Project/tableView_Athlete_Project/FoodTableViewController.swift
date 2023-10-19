@@ -9,10 +9,6 @@ import UIKit
 
 class FoodTableViewController: UITableViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var subtitleLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +39,8 @@ class FoodTableViewController: UITableViewController {
         ]
             )
     ]
+    
+    
 
     // MARK: - Table view data source
 
@@ -63,8 +61,8 @@ class FoodTableViewController: UITableViewController {
         let food = meals[indexPath.row]
         // Configure the cell...
         
-        titleLabel?.text = "Main Text"
-        subtitleLabel?.text = "Detail Text"
+        cell.textLabel?.text = food.name
+        cell.detailTextLabel?.text = "\(food.food)"
         return cell
     }
     
