@@ -14,6 +14,18 @@ class EmojiTableViewController: UITableViewController {
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
+    
+    @IBSegueAction func addEditEmoji(_ coder: NSCoder, sender: Any?) -> AddEditEmojiTableViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            //editing emoji
+            let emojiToEdit = emojis[indexPath.row]
+            return AddEditEmojiTableViewController(coder: coder, emoji: emojiToEdit)
+        } else {
+            return AddEditEmojiTableViewController(coder: coder, emoji: nil)
+        }
+    }
+    
     var emojis: [Emoji] = [
           Emoji(symbol: "😀", name: "Grinning Face",
                 description: "A typical smiley face.", usage: "happiness"),
@@ -47,15 +59,12 @@ class EmojiTableViewController: UITableViewController {
         let movedEmoji = emojis.remove(at: fromIndexPath.row)
         emojis.insert(movedEmoji, at: to.row)
     }
-    //Override to support conditional editing of the table view.
-//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> Bool {
-//        //Return false if you do not want the specified item to be editable.
-//        return .none
-//   }
-
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
+//    Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) ->
+        UITableViewCell.EditingStyle {
+            return .delete
+        }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -97,17 +106,14 @@ class EmojiTableViewController: UITableViewController {
 
     
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            emojis.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
     }
-    */
 
     
     
