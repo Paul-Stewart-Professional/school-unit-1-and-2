@@ -14,6 +14,7 @@
 		02C4B4A82AE958F500A64DA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C4B4A62AE958F500A64DA9 /* LaunchScreen.storyboard */; };
 		02C4B4B02AE959C800A64DA9 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4B4AF2AE959C800A64DA9 /* Registration.swift */; };
 		02C4B4B22AE95A0200A64DA9 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4B4B12AE95A0200A64DA9 /* RoomType.swift */; };
+		02C4B4B42AE95C4F00A64DA9 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4B4B32AE95C4F00A64DA9 /* AddRegistrationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		02C4B4A92AE958F500A64DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02C4B4AF2AE959C800A64DA9 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		02C4B4B12AE95A0200A64DA9 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
+		02C4B4B32AE95C4F00A64DA9 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				02C4B49B2AE958F300A64DA9 /* AppDelegate.swift */,
 				02C4B49D2AE958F300A64DA9 /* SceneDelegate.swift */,
 				02C4B4A12AE958F300A64DA9 /* Main.storyboard */,
+				02C4B4B32AE95C4F00A64DA9 /* AddRegistrationTableViewController.swift */,
 				02C4B4AF2AE959C800A64DA9 /* Registration.swift */,
 				02C4B4B12AE95A0200A64DA9 /* RoomType.swift */,
 				02C4B4A42AE958F500A64DA9 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02C4B4B22AE95A0200A64DA9 /* RoomType.swift in Sources */,
+				02C4B4B42AE95C4F00A64DA9 /* AddRegistrationTableViewController.swift in Sources */,
 				02C4B49C2AE958F300A64DA9 /* AppDelegate.swift in Sources */,
 				02C4B4B02AE959C800A64DA9 /* Registration.swift in Sources */,
 				02C4B49E2AE958F300A64DA9 /* SceneDelegate.swift in Sources */,
