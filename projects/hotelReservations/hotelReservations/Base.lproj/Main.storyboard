@@ -121,6 +121,9 @@
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="yZQ-lx-Bup">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="216.33333333333334"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="DVD-xg-pO9" eventType="valueChanged" id="AvI-PH-YLM"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -164,6 +167,9 @@
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="FJW-lf-qqQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="216.33333333333334"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="DVD-xg-pO9" eventType="valueChanged" id="XAc-fK-BrV"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -171,6 +177,131 @@
                                                 <constraint firstItem="FJW-lf-qqQ" firstAttribute="top" secondItem="9EV-vx-9Pr" secondAttribute="top" id="QcU-hb-ou5"/>
                                                 <constraint firstItem="FJW-lf-qqQ" firstAttribute="leading" secondItem="9EV-vx-9Pr" secondAttribute="leading" id="gSv-dw-i4U"/>
                                                 <constraint firstAttribute="trailing" secondItem="FJW-lf-qqQ" secondAttribute="trailing" id="gmX-lD-Hu7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="9t0-Of-SsN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9YJ-WL-6dB">
+                                        <rect key="frame" x="0.0" y="778.9999885559082" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9YJ-WL-6dB" id="4TN-jE-5UA">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adults" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWP-X0-4cr">
+                                                    <rect key="frame" x="28" y="11.666666666666666" width="48" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-BA-RQp">
+                                                    <rect key="frame" x="264.66666666666669" y="6" width="120.33333333333331" height="32"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-TM-hhv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="10.333333333333334" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Xy5-Ws-BcR">
+                                                            <rect key="frame" x="26.333333333333314" y="0.0" width="94" height="32"/>
+                                                            <connections>
+                                                                <action selector="stepperValueChanged:" destination="DVD-xg-pO9" eventType="valueChanged" id="1Ho-Co-a0A"/>
+                                                            </connections>
+                                                        </stepper>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jKc-BA-RQp" secondAttribute="trailing" constant="8" id="3ap-gh-Ofz"/>
+                                                <constraint firstItem="aWP-X0-4cr" firstAttribute="leading" secondItem="4TN-jE-5UA" secondAttribute="leadingMargin" constant="8" id="K9w-Ao-F4D"/>
+                                                <constraint firstItem="jKc-BA-RQp" firstAttribute="centerY" secondItem="4TN-jE-5UA" secondAttribute="centerY" id="Ptn-2e-sSX"/>
+                                                <constraint firstItem="aWP-X0-4cr" firstAttribute="centerY" secondItem="4TN-jE-5UA" secondAttribute="centerY" id="WD9-OI-5RF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="V2s-if-9Ym">
+                                        <rect key="frame" x="0.0" y="822.66665649414062" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V2s-if-9Ym" id="qKF-sQ-2Qo">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkE-mC-F9G">
+                                                    <rect key="frame" x="27.999999999999996" y="11.666666666666666" width="63.666666666666657" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4zt-9l-aHg">
+                                                    <rect key="frame" x="264.66666666666669" y="6" width="120.33333333333331" height="32"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t42-3g-sQx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="10.333333333333334" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="bNd-kS-C8l">
+                                                            <rect key="frame" x="26.333333333333314" y="0.0" width="94" height="32"/>
+                                                            <connections>
+                                                                <action selector="stepperValueChanged:" destination="DVD-xg-pO9" eventType="valueChanged" id="MVi-na-BUo"/>
+                                                            </connections>
+                                                        </stepper>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PkE-mC-F9G" firstAttribute="leading" secondItem="qKF-sQ-2Qo" secondAttribute="leadingMargin" constant="8" id="R5s-GD-N1z"/>
+                                                <constraint firstAttribute="trailing" secondItem="4zt-9l-aHg" secondAttribute="trailing" constant="8" id="V10-jH-KRM"/>
+                                                <constraint firstItem="PkE-mC-F9G" firstAttribute="centerY" secondItem="qKF-sQ-2Qo" secondAttribute="centerY" id="XyR-Yw-dae"/>
+                                                <constraint firstItem="4zt-9l-aHg" firstAttribute="centerY" secondItem="qKF-sQ-2Qo" secondAttribute="centerY" id="dcZ-ny-cIw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="sg0-ch-aG9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="h2y-Cn-0yg">
+                                        <rect key="frame" x="0.0" y="902.33332443237305" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h2y-Cn-0yg" id="L2E-hp-UDY">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wifi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIW-y5-iNs">
+                                                    <rect key="frame" x="28" y="11.666666666666666" width="29.333333333333329" height="20.333333333333336"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-7y-kvI">
+                                                    <rect key="frame" x="257.66666666666669" y="6.3333333333333321" width="127.33333333333331" height="30.999999999999996"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10/Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9W-gg-Pv1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VRe-Rf-lrU">
+                                                            <rect key="frame" x="78.333333333333314" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="wifiSwitch:" destination="DVD-xg-pO9" eventType="valueChanged" id="sGz-k5-ped"/>
+                                                                <action selector="wifiSwitchValueChanged:" destination="DVD-xg-pO9" eventType="valueChanged" id="VIe-eh-deS"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QGa-7y-kvI" firstAttribute="centerY" secondItem="L2E-hp-UDY" secondAttribute="centerY" id="p2d-vQ-hwZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="QGa-7y-kvI" secondAttribute="trailing" constant="8" id="wZ7-WH-b26"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -197,6 +328,10 @@
                         <outlet property="emailTextField" destination="HEz-rq-0Th" id="Y8q-z8-ly6"/>
                         <outlet property="firstNameTextField" destination="DQ0-kJ-EMU" id="XD7-Gb-iId"/>
                         <outlet property="lastNameTextField" destination="Ksv-ZK-QqM" id="lV1-p7-QFn"/>
+                        <outlet property="numberOfAdultsLabel" destination="fbg-TM-hhv" id="hc7-1l-Zvb"/>
+                        <outlet property="numberOfAdultsStepper" destination="Xy5-Ws-BcR" id="CRK-wC-ABZ"/>
+                        <outlet property="numberOfChildrenLabel" destination="t42-3g-sQx" id="aI0-zE-6Mo"/>
+                        <outlet property="numberOfChildrenStepper" destination="bNd-kS-C8l" id="pCr-DC-AeO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUN-Yq-SpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
