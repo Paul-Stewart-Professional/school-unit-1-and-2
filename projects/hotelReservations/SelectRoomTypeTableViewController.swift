@@ -1,13 +1,20 @@
 //
-//  TableViewController.swift
-//  emojiDictionary
+//  SelectRoomTypeTableViewController.swift
+//  hotelReservations
 //
-//  Created by Paul Stewart on 10/24/23.
+//  Created by Paul Stewart on 10/26/23.
 //
 
 import UIKit
 
-class AddEditEmojiTableViewController: UITableViewController {
+protocol SelectRoomTypeTableViewControllerDelegate: AnyObject {
+    func selectRoomTypeTableViewController(_ controller: SelectRoomTypeTableViewController, didSelect roomType: RoomType)
+}
+
+class SelectRoomTypeTableViewController: UITableViewController {
+    weak var delegate: SelectRoomTypeTableViewControllerDelegate?
+    //vars
+    var roomType: RoomType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,28 +27,42 @@ class AddEditEmojiTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    
-    
-    var emoji: Emoji?
-    init?(coder: NSCoder, emoji: Emoji?) {
-        self.emoji = emoji
-        super.init(coder: coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return RoomType.all.count
+    }
+
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTypeCell", for: indexPath)
+        
         // Configure the cell...
-
+        let roomType = RoomType.all[indexPath.row]
+        cell.textLabel?.text = roomType.name
+        cell.detailTextLabel?.text = "$ \(roomType.price)"
+        
+        
+        if roomType == self.roomType {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
+        
     }
-    */
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        roomType = RoomType.all[indexPath.row]
+        delegate?.selectRoomTypeTableViewController(self, didSelect: roomType!)
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

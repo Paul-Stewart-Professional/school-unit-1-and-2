@@ -7,7 +7,14 @@
 
 import UIKit
 
-class AddRegistrationTableViewController: UITableViewController {
+class AddRegistrationTableViewController: UITableViewController,
+   SelectRoomTypeTableViewControllerDelegate {
+    func selectRoomTypeTableViewController(_ controller:
+       SelectRoomTypeTableViewController, didSelect roomType:
+       RoomType) {
+        self.roomType = roomType
+        updateRoomType()
+    }
     
     let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDatePickerCellIndexPath = IndexPath(row: 3, section: 1)
@@ -63,6 +70,10 @@ class AddRegistrationTableViewController: UITableViewController {
         tableView.endUpdates()
     }
     
+    //vars
+    var roomType: RoomType?
+    //outlets
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -75,7 +86,18 @@ class AddRegistrationTableViewController: UITableViewController {
     @IBOutlet var numberOfChildrenLabel: UILabel!
     @IBOutlet var numberOfChildrenStepper: UIStepper!
     
-    @IBAction func wifiSwitch(_ sender: Any) {
+    @IBOutlet weak var roomTypeDetailLabel: UILabel!
+    
+    @IBOutlet weak var wifiSwitch: UISwitch!
+    
+    @IBSegueAction func selectRoomType(_ coder: NSCoder, sender: Any?) -> SelectRoomTypeTableViewController? {
+        let selectRoomTypeController = SelectRoomTypeTableViewController(coder: coder)
+        selectRoomTypeController?.delegate = self
+        selectRoomTypeController?.roomType = roomType
+        return selectRoomTypeController
+    }
+    
+    @IBAction func wifiSwitchChanged(_ sender: UISwitch) {
     }
     
     override func viewDidLoad() {
@@ -84,29 +106,49 @@ class AddRegistrationTableViewController: UITableViewController {
         checkInDatePicker.minimumDate = midnightToday
         checkInDatePicker.date = midnightToday
         updateNumberOfGuests()
+        updateRoomType()
     }
     
+    @IBAction func cancelButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
     // MARK: - Table view data source
     
-    @IBAction func doneBarButtonItemTapped(_ sender: Any) {
+    
+    var registration: Registration? {
+        guard let roomType = roomType else { return nil }
         let firstName = firstNameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
         let email = emailTextField.text ?? ""
-//        let checkInDate = checkInDatePicker.date
-//        let checkOutDate = checkOutDatePicker.date
-//        let adultCount = Int(numberOfAdultsStepper.value)
-//        let childCount = Int(numberOfChildrenStepper.value)
+        let checkInDate = checkInDatePicker.date
+        let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
         
-        print("DONE TAPPED")
-        print("firstName: \(firstName)")
-        print("lastName: \(lastName)")
-        print("email: \(email)")
+        return Registration(firstName: firstName,
+                            lastName: lastName,
+                            emailAddress: email,
+                            checkInDate: checkInDate,
+                            checkOutDate: checkOutDate,
+                            numberOfAdults: numberOfAdults,
+                            numberOfChildren: numberOfChildren,
+                            wifi: hasWifi, 
+                            roomType: roomType)
+    }
+    
+    func updateRoomType() {
+        if let roomType = roomType {
+            roomTypeDetailLabel.text = roomType.name
+        } else {
+            roomTypeDetailLabel.text = "Not Set"
+        }
     }
     
     func updateDateViews() {
         checkOutDatePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDatePicker.date)
-        checkOutDateLabel.text = checkInDatePicker.date.formatted(date: .abbreviated, time: .omitted)
-        checkOutDatePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDatePicker.date)
+        checkOutDateLabel.text = checkOutDatePicker.date.formatted(date: .abbreviated, time: .omitted)
+//        checkInDatePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDatePicker.date)
         checkInDateLabel.text = checkInDatePicker.date.formatted(date: .abbreviated, time: .omitted)
     }
     
@@ -126,6 +168,7 @@ class AddRegistrationTableViewController: UITableViewController {
     }
     
     @IBAction func wifiSwitchValueChanged(_ sender: Any) {
+        
     }
     
 }

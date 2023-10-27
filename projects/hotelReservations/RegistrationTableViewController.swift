@@ -1,13 +1,13 @@
 //
-//  TableViewController.swift
-//  emojiDictionary
+//  RegistrationTableViewController.swift
+//  hotelReservations
 //
-//  Created by Paul Stewart on 10/24/23.
+//  Created by Paul Stewart on 10/26/23.
 //
 
 import UIKit
 
-class AddEditEmojiTableViewController: UITableViewController {
+class RegistrationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +22,43 @@ class AddEditEmojiTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     
-    var emoji: Emoji?
-    init?(coder: NSCoder, emoji: Emoji?) {
-        self.emoji = emoji
-        super.init(coder: coder)
+    var registrations: [Registration] = []
+    var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter
+    }()
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return registrations.count
+    }
+
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationCell", for: indexPath)
+        let registration = registrations[indexPath.row]
         // Configure the cell...
-
+        cell.textLabel?.text = registration.firstName + " " + registration.lastName
+        cell.detailTextLabel?.text = dateFormatter.string(from: registration.checkInDate) + " - " + dateFormatter.string(from: registration.checkOutDate) + ": " + registration.roomType.name
         return cell
     }
-    */
+    
+    @IBAction func unwindFromAddRegistration(segue: UIStoryboardSegue) {
+        guard let addRegistrationTableViewController =
+           segue.source as? AddRegistrationTableViewController,
+        let registration =
+           addRegistrationTableViewController.registration else
+           { return }
+        registrations.append(registration)
+        tableView.reloadData()
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
