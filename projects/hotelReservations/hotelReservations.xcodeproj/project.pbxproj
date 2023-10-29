@@ -48,8 +48,6 @@
 		02C4B48F2AE958F300A64DA9 = {
 			isa = PBXGroup;
 			children = (
-				02C4B4B72AEAC81800A64DA9 /* RegistrationTableViewController.swift */,
-				02C4B4B52AEAAD3C00A64DA9 /* SelectRoomTypeTableViewController.swift */,
 				02C4B49A2AE958F300A64DA9 /* hotelReservations */,
 				02C4B4992AE958F300A64DA9 /* Products */,
 			);
@@ -66,6 +64,8 @@
 		02C4B49A2AE958F300A64DA9 /* hotelReservations */ = {
 			isa = PBXGroup;
 			children = (
+				02C4B4B52AEAAD3C00A64DA9 /* SelectRoomTypeTableViewController.swift */,
+				02C4B4B72AEAC81800A64DA9 /* RegistrationTableViewController.swift */,
 				02C4B49B2AE958F300A64DA9 /* AppDelegate.swift */,
 				02C4B49D2AE958F300A64DA9 /* SceneDelegate.swift */,
 				02C4B4A12AE958F300A64DA9 /* Main.storyboard */,
