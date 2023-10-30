@@ -26,23 +26,6 @@ class EmojiTableViewController: UITableViewController {
         }
     }
     
-    var emojis: [Emoji] = [
-          Emoji(symbol: "😀", name: "Grinning Face",
-                description: "A typical smiley face.", usage: "happiness"),
-          Emoji(symbol: "😕", name: "Confused Face", description: "A confused, puzzled face.", usage: "unsure what to think; displeasure"),
-          Emoji(symbol: "😍", name: "Heart Eyes", description: "A smiley face with hearts for eyes.", usage: "love of something; attractive"),
-          Emoji(symbol: "🧑‍💻", name: "Developer", description: "A person working on a MacBook (probably using Xcode to write iOS apps in Swift).", usage: "apps, software, programming"),
-          Emoji(symbol: "🐢", name: "Turtle", description: "A cute turtle.", usage: "something slow"),
-          Emoji(symbol: "🐘", name: "Elephant", description: "A gray elephant.", usage: "good memory"),
-          Emoji(symbol: "🍝", name: "Spaghetti", description: "A plate of spaghetti.", usage: "spaghetti"),
-          Emoji(symbol: "🎲", name: "Die", description: "A single die.", usage: "taking a risk, chance; game"),
-          Emoji(symbol: "⛺️", name: "Tent", description: "A small tent.", usage: "camping"),
-          Emoji(symbol: "📚", name: "Stack of Books", description: "Three colored books stacked on each other.", usage: "homework, studying"),
-          Emoji(symbol: "💔", name: "Broken Heart", description: "A red, broken heart.", usage: "extreme sadness"),
-          Emoji(symbol: "💤", name: "Snore", description: "Three blue \'z\'s.", usage: "tired, sleepiness"),
-          Emoji(symbol: "🏁", name: "Checkered Flag", description: "A black-and-white checkered flag.", usage: "completion")
-      ]
-    
     @IBAction func editButtonTapepd(_ sender: Any) {
         let tableViewEditingMode = tableView.isEditing
         tableView.setEditing(!tableViewEditingMode, animated: true)
@@ -60,6 +43,8 @@ class EmojiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let movedEmoji = emojis.remove(at: fromIndexPath.row)
         emojis.insert(movedEmoji, at: to.row)
+        Emoji.saveToFile(emojis: emojis)
+        tableView.reloadData()
     }
 //    Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) ->
@@ -69,13 +54,18 @@ class EmojiTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        let fileEmojis = Emoji.loadFromFile()
+        emojis = fileEmojis
+        
+        if fileEmojis.isEmpty {
+            emojis = Emoji.sampleEmojis()
+        }
     }
     //unwind segue
     @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
         let sourceViewController = segue.source as? AddEditEmojiTableViewController,
         let emoji = sourceViewController.emoji else { return }
-        
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             emojis[selectedIndexPath.row] = emoji
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
@@ -84,6 +74,7 @@ class EmojiTableViewController: UITableViewController {
             emojis.append(emoji)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
+        Emoji.saveToFile(emojis: emojis)
     }
 
     // MARK: - Table view data source
@@ -110,9 +101,12 @@ class EmojiTableViewController: UITableViewController {
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        tableView.reloadData()
         if editingStyle == .delete {
             emojis.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            }
+            Emoji.saveToFile(emojis: emojis)
+            tableView.reloadData()
+        }
     }
 }
