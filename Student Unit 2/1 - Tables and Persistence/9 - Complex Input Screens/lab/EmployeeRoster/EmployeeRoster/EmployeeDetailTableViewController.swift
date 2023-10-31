@@ -6,11 +6,23 @@ protocol EmployeeDetailTableViewControllerDelegate: AnyObject {
 }
 
 class EmployeeDetailTableViewController: UITableViewController, UITextFieldDelegate {
-
+    
+    //vars
+    var isEditingBirthday = false {
+        didSet {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    var datePickerIndexPath = IndexPath(row: 2, section: 0)
+    var dobLabelIndexPath = IndexPath(row: 1, section: 0)
+    
+    //outlets
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var dobLabel: UILabel!
     @IBOutlet var employeeTypeLabel: UILabel!
     @IBOutlet var saveBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var dobDatePicker: UIDatePicker!
     
     weak var delegate: EmployeeDetailTableViewControllerDelegate?
     var employee: Employee?
@@ -29,6 +41,22 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         updateSaveButtonState()
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath {
+        case datePickerIndexPath where isEditingBirthday == false:
+            return 0
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath == dobLabelIndexPath {
+            isEditingBirthday.toggle()
+            dobLabel.textColor = .black
+        }
+    }
+    
     func updateView() {
         if let employee = employee {
             navigationItem.title = employee.name
@@ -43,6 +71,12 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         }
     }
     
+    @IBAction func calendarValueChanged(_ sender: Any) {
+        dobLabel.text = dobDatePicker.date.formatted(date: .numeric, time: .omitted)
+        dobLabel.textColor = .black
+        dobDatePicker.maximumDate = .now
+    }
+    
     private func updateSaveButtonState() {
         let shouldEnableSaveButton = nameTextField.text?.isEmpty == false
         saveBarButtonItem.isEnabled = shouldEnableSaveButton
@@ -53,7 +87,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
             return
         }
         
-        let employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
+        let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: .exempt)
         delegate?.employeeDetailTableViewController(self, didSave: employee)
     }
     
