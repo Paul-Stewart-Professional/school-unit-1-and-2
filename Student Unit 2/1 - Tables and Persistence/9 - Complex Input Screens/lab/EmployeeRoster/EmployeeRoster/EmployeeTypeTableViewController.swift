@@ -6,10 +6,11 @@
 //
 
 import UIKit
+
 protocol EmployeeTypeTableViewControllerDelegate {
     func employeeTypeTableViewController(_ controller: UIViewController, didSelect employeeType: EmployeeType)
 }
-class EmployeeTypeTableViewController: UITableViewController{
+class EmployeeTypeTableViewController: UITableViewController {
     
     var employeeType: EmployeeType?
     var delegate: EmployeeTypeTableViewControllerDelegate?

@@ -5,9 +5,16 @@ protocol EmployeeDetailTableViewControllerDelegate: AnyObject {
     func employeeDetailTableViewController(_ controller: EmployeeDetailTableViewController, didSave employee: Employee)
 }
 
-class EmployeeDetailTableViewController: UITableViewController, UITextFieldDelegate {
+class EmployeeDetailTableViewController: UITableViewController, UITextFieldDelegate, EmployeeTypeTableViewControllerDelegate {
+    func employeeTypeTableViewController(_ controller: UIViewController, didSelect employeeType: EmployeeType) {
+        self.employeeType = employeeType
+        employeeTypeLabel.text = employeeType.description
+        employeeTypeLabel.textColor = .black
+    }
+    
     
     //vars
+    var employeeType: EmployeeType?
     var isEditingBirthday = false {
         didSet {
             tableView.beginUpdates()
@@ -25,6 +32,11 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet weak var dobDatePicker: UIDatePicker!
         
     
+    @IBSegueAction func showEmployeeTypes(_ coder: NSCoder) -> EmployeeTypeTableViewController? {
+        let employeeTypeVC = EmployeeTypeTableViewController(coder: coder)
+        employeeTypeVC?.delegate = self
+        return employeeTypeVC
+    }
     
     weak var delegate: EmployeeDetailTableViewControllerDelegate?
     var employee: Employee?
@@ -80,7 +92,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     }
     
     private func updateSaveButtonState() {
-        let shouldEnableSaveButton = nameTextField.text?.isEmpty == false
+        let shouldEnableSaveButton = nameTextField.text?.isEmpty == false && employeeType != nil
         saveBarButtonItem.isEnabled = shouldEnableSaveButton
     }
     
@@ -88,8 +100,8 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         guard let name = nameTextField.text else {
             return
         }
-        
-        let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: .exempt)
+        guard let employeeType = employeeType else { return }
+        let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: employeeType)
         delegate?.employeeDetailTableViewController(self, didSave: employee)
     }
     

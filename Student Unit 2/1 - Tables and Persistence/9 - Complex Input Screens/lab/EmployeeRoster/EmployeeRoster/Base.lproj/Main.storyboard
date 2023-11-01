@@ -198,7 +198,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Mvf-lZ-IwG" kind="show" id="XJi-V7-FLp"/>
+                                            <segue destination="Mvf-lZ-IwG" kind="show" destinationCreationSelector="showEmployeeTypes:" id="XJi-V7-FLp"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
