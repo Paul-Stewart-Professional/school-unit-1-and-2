@@ -302,7 +302,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sKr-bE-vCi" kind="relationship" relationship="rootViewController" destinationCreationSelector="showEmployeeDetail:sender:" id="fG5-lR-AER"/>
+                        <segue destination="sKr-bE-vCi" kind="relationship" relationship="rootViewController" destinationCreationSelector="employeeInfoToEmployeeTypeSegue:" id="fG5-lR-AER"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNQ-P4-DoR" userLabel="First Responder" sceneMemberID="firstResponder"/>

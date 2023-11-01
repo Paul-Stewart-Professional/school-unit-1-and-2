@@ -23,6 +23,8 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet var employeeTypeLabel: UILabel!
     @IBOutlet var saveBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var dobDatePicker: UIDatePicker!
+        
+    
     
     weak var delegate: EmployeeDetailTableViewControllerDelegate?
     var employee: Employee?

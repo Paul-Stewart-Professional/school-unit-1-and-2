@@ -6,10 +6,15 @@
 //
 
 import UIKit
-
-class EmployeeTypeTableViewController: UITableViewController {
+protocol EmployeeTypeTableViewControllerDelegate {
+    func employeeTypeTableViewController(_ controller: UIViewController, didSelect employeeType: EmployeeType)
+}
+class EmployeeTypeTableViewController: UITableViewController{
     
-    var employee: EmployeeType?
+    var employeeType: EmployeeType?
+    var delegate: EmployeeTypeTableViewControllerDelegate?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +41,24 @@ class EmployeeTypeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTypeCell", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let type = EmployeeType.allCases[indexPath.row]
+        cell.textLabel?.text = type.description
+        
+        if employeeType == type {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedType = EmployeeType.allCases[indexPath.row]
+            employeeType = selectedType // Set the employeeType property to the selected type
+        delegate?.employeeTypeTableViewController(self, didSelect: selectedType)
+            tableView.reloadData() // Reload the table view to visually indicate the selection
     }
     
 
