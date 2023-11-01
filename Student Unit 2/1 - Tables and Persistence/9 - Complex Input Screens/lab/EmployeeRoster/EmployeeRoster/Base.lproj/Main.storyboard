@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" title="Employees" id="qj9-5b-Hx3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bv7-eR-iaZ">
                             <connections>
-                                <segue destination="SJN-k4-Vfz" kind="presentation" identifier="" id="fI6-Dc-E20"/>
+                                <segue destination="SJN-k4-Vfz" kind="presentation" identifier="" destinationCreationSelector="showEmployeeDetail:" id="fI6-Dc-E20"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -212,7 +212,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="fME-6a-8Wl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fNP-Az-Eeu">
                             <connections>
-                                <segue destination="vE1-1q-P3J" kind="unwind" unwindAction="unwindToEmployeeListWithSegue:" id="CxX-KR-9AX"/>
+                                <segue destination="vE1-1q-P3J" kind="unwind" identifier="unwindToEmployee" unwindAction="unwindToEmployeeListWithSegue:" id="CxX-KR-9AX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="lF3-iR-7n9">
@@ -302,7 +302,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sKr-bE-vCi" kind="relationship" relationship="rootViewController" destinationCreationSelector="employeeInfoToEmployeeTypeSegue:" id="fG5-lR-AER"/>
+                        <segue destination="sKr-bE-vCi" kind="relationship" relationship="rootViewController" destinationCreationSelector="showEmployeeDetail:sender:" id="fG5-lR-AER"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNQ-P4-DoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,7 +311,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HfC-1c-cmZ"/>
+        <segue reference="fI6-Dc-E20"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="groupTableViewBackgroundColor">

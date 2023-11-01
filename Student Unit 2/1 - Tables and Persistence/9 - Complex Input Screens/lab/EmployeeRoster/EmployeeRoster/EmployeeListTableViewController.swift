@@ -36,8 +36,8 @@ class EmployeeListTableViewController: UITableViewController, EmployeeDetailTabl
     
     // MARK: - Navigation
     
+
     @IBSegueAction func showEmployeeDetail(_ coder: NSCoder, sender: Any?) -> EmployeeDetailTableViewController? {
-        
         let detailViewController = EmployeeDetailTableViewController(coder: coder)
         detailViewController?.delegate = self
         
@@ -53,6 +53,25 @@ class EmployeeListTableViewController: UITableViewController, EmployeeDetailTabl
         
         return detailViewController
     }
+    
+    
+//    @IBSegueAction func showEmployeeDetail(_ coder: NSCoder, sender: Any?) -> EmployeeDetailTableViewController? {
+//        
+//        let detailViewController = EmployeeDetailTableViewController(coder: coder)
+//        detailViewController?.delegate = self
+//        
+//        guard
+//            let cell = sender as? UITableViewCell,
+//            let indexPath = tableView.indexPath(for: cell)
+//        else {
+//            return detailViewController
+//        }
+//        
+//        let employee = employees[indexPath.row]
+//        detailViewController?.employee = employee
+//        
+//        return detailViewController
+//    }
     
     @IBAction func unwindToEmployeeList(segue: UIStoryboardSegue) {
         tableView.reloadData()

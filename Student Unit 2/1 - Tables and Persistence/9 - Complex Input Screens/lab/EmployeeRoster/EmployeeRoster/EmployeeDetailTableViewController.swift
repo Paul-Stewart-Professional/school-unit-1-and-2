@@ -10,9 +10,9 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         self.employeeType = employeeType
         employeeTypeLabel.text = employeeType.description
         employeeTypeLabel.textColor = .black
+        updateSaveButtonState()
     }
-    
-    
+
     //vars
     var employeeType: EmployeeType?
     var isEditingBirthday = false {
@@ -31,7 +31,6 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet var saveBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var dobDatePicker: UIDatePicker!
         
-    
     @IBSegueAction func showEmployeeTypes(_ coder: NSCoder) -> EmployeeTypeTableViewController? {
         let employeeTypeVC = EmployeeTypeTableViewController(coder: coder)
         employeeTypeVC?.delegate = self
@@ -50,7 +49,6 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateView()
         updateSaveButtonState()
     }
@@ -100,9 +98,11 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         guard let name = nameTextField.text else {
             return
         }
-        guard let employeeType = employeeType else { return }
+        guard let employeeType = self.employeeType else { return }
+        
         let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: employeeType)
         delegate?.employeeDetailTableViewController(self, didSave: employee)
+        performSegue(withIdentifier: "unwindToEmployee", sender: nil)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
