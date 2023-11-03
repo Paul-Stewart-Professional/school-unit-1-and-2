@@ -30,11 +30,21 @@ class BookTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+                    // Remove the Book object from the array
+                    books.remove(at: indexPath.row)
+                    
+                    // Update the table view to reflect the change
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+    }
 
     // MARK: - Navigation
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        guard let source = segue.source as? BookFormViewController,
+        guard let source = segue.source as? BookFormTableViewController,
             let book = source.book else {return}
         
         if let indexPath = tableView.indexPathForSelectedRow {
