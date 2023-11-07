@@ -7,40 +7,56 @@
 
 import UIKit
 
+extension UIImageView {
+    
+}
+
 class FamilyListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.tableView.rowHeight = 90
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return familyMembers.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "familyTableCells", for: indexPath)
 
         // Configure the cell...
-
+        let familyMemberRow = familyMembers[indexPath.row]
+        cell.textLabel!.text = familyMemberRow.name
+        cell.detailTextLabel?.text = ">"
+        cell.imageView?.image = UIImage(named: familyMemberRow.imageName)
         return cell
     }
-    */
-
+    
+    
+    @IBSegueAction func segueFromCellToDetail(_ coder: NSCoder, sender: Any?) -> DetailViewController? {
+        
+        guard let selectedRow = tableView.indexPathForSelectedRow else { return nil }
+            let selectedFamilyMember = familyMembers[selectedRow.row]
+        tableView.deselectRow(at: selectedRow, animated: true)
+        return DetailViewController(familyMember: selectedFamilyMember, coder: coder)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

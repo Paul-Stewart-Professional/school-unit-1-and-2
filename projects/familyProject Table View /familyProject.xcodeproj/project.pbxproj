@@ -13,9 +13,6 @@
 		0200D90C2AC60F8B005CBC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0200D90A2AC60F8B005CBC07 /* Main.storyboard */; };
 		0200D90E2AC60F8C005CBC07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0200D90D2AC60F8C005CBC07 /* Assets.xcassets */; };
 		0200D9112AC60F8C005CBC07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0200D90F2AC60F8C005CBC07 /* LaunchScreen.storyboard */; };
-		0200D91C2AC60F8C005CBC07 /* familyProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200D91B2AC60F8C005CBC07 /* familyProjectTests.swift */; };
-		0200D9262AC60F8D005CBC07 /* familyProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200D9252AC60F8D005CBC07 /* familyProjectUITests.swift */; };
-		0200D9282AC60F8D005CBC07 /* familyProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200D9272AC60F8D005CBC07 /* familyProjectUITestsLaunchTests.swift */; };
 		0200D9352AC71714005CBC07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200D9342AC71714005CBC07 /* DetailViewController.swift */; };
 		0200D9772ACB1097005CBC07 /* FamilyMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200D9762ACB1097005CBC07 /* FamilyMember.swift */; };
 		02A5C8342AF990EE001DD445 /* FamilyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A5C8332AF990EE001DD445 /* FamilyListTableViewController.swift */; };
@@ -48,10 +45,7 @@
 		0200D9102AC60F8C005CBC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0200D9122AC60F8C005CBC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0200D9172AC60F8C005CBC07 /* familyProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = familyProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0200D91B2AC60F8C005CBC07 /* familyProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = familyProjectTests.swift; sourceTree = "<group>"; };
 		0200D9212AC60F8D005CBC07 /* familyProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = familyProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0200D9252AC60F8D005CBC07 /* familyProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = familyProjectUITests.swift; sourceTree = "<group>"; };
-		0200D9272AC60F8D005CBC07 /* familyProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = familyProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0200D9342AC71714005CBC07 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0200D9762ACB1097005CBC07 /* FamilyMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMember.swift; sourceTree = "<group>"; };
 		02A5C8332AF990EE001DD445 /* FamilyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListTableViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				0200D9032AC60F8B005CBC07 /* familyProject */,
-				0200D91A2AC60F8C005CBC07 /* familyProjectTests */,
-				0200D9242AC60F8D005CBC07 /* familyProjectUITests */,
 				0200D9022AC60F8B005CBC07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,23 +109,6 @@
 				0200D9122AC60F8C005CBC07 /* Info.plist */,
 			);
 			path = familyProject;
-			sourceTree = "<group>";
-		};
-		0200D91A2AC60F8C005CBC07 /* familyProjectTests */ = {
-			isa = PBXGroup;
-			children = (
-				0200D91B2AC60F8C005CBC07 /* familyProjectTests.swift */,
-			);
-			path = familyProjectTests;
-			sourceTree = "<group>";
-		};
-		0200D9242AC60F8D005CBC07 /* familyProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0200D9252AC60F8D005CBC07 /* familyProjectUITests.swift */,
-				0200D9272AC60F8D005CBC07 /* familyProjectUITestsLaunchTests.swift */,
-			);
-			path = familyProjectUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0200D91C2AC60F8C005CBC07 /* familyProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,8 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0200D9282AC60F8D005CBC07 /* familyProjectUITestsLaunchTests.swift in Sources */,
-				0200D9262AC60F8D005CBC07 /* familyProjectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,18 +16,21 @@ struct FamilyMember {
     var carImage: String
 }
 
+var familyMembers: [FamilyMember] = [dad, mom, paul, alex, ann, james, kari, tala]
+
 let dad = FamilyMember(
     age: 42,
-    name: "Richard Stewart",
+    name: "Richard",
     favThing1: "The Orville",
     favThing2: "Dr Pepper",
     imageName: "dad",
     carImage: "dad_car"
+    
 )
 
 let mom = FamilyMember(
     age: 41,
-    name: "Jennifer Stewart",
+    name: "Jennifer",
     favThing1: "When Calls The Heart",
     favThing2: "Apricot Nectar",
     imageName: "mom",
@@ -36,7 +39,7 @@ let mom = FamilyMember(
 
 let paul = FamilyMember(
     age: 17,
-    name: "Paul Stewart",
+    name: "Paul",
     favThing1: "Ghost Stories",
     favThing2: "Dr Pepper",
     imageName: "me",
@@ -45,7 +48,7 @@ let paul = FamilyMember(
 
 let alex = FamilyMember(
     age: 15,
-    name: "Alexander Stewart",
+    name: "Alexander",
     favThing1: "One Piece",
     favThing2: "Dr Pepper",
     imageName: "alex",
@@ -54,7 +57,7 @@ let alex = FamilyMember(
 
 let ann = FamilyMember(
     age: 11,
-    name: "Annalynn Stewart",
+    name: "Annalynn",
     favThing1: "Psych",
     favThing2: "Strawberry Fanta",
     imageName: "ann",
@@ -63,7 +66,7 @@ let ann = FamilyMember(
 
 let james = FamilyMember(
     age: 8,
-    name: "James Stewart",
+    name: "James",
     favThing1: "Gravity Falls",
     favThing2: "Raspberry Cream Soda",
     imageName: "james",
@@ -72,7 +75,7 @@ let james = FamilyMember(
 
 let kari = FamilyMember(
     age: 6,
-    name: "Kari Stewart",
+    name: "Kari",
     favThing1: "Walker Texas Ranger",
     favThing2: "Root Beer",
     imageName: "kari",

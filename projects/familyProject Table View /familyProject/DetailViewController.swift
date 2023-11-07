@@ -30,6 +30,15 @@ class DetailViewController: UIViewController {
     
     var familyMember: FamilyMember?
     
+    init?(familyMember: FamilyMember, coder: NSCoder) {
+        super.init(coder: coder)
+        self.familyMember = familyMember
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
