@@ -9,7 +9,6 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    
     //outlets
     
     @IBOutlet weak var editButton: UIBarButtonItem!

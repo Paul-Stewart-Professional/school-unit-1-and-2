@@ -1,58 +1,48 @@
 //
-//  FamilyListTableViewController.swift
-//  familyProject
+//  PlayersTableViewController.swift
+//  scoreKeeper
 //
-//  Created by Paul Stewart on 11/6/23.
+//  Created by Paul Stewart on 11/8/23.
 //
 
 import UIKit
 
-class FamilyListTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
+class PlayersTableViewController: UITableViewController {
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        self.tableView.rowHeight = 90
-        
+        tableView.rowHeight = 70
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return familyMembers.count
+        return arrayOfPlayers.count
     }
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "familyTableCells", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerScoresCell", for: indexPath) as! PlayerScoresTableViewCell
 
-        // Configure the cell...
-        let familyMemberRow = familyMembers[indexPath.row]
-        cell.textLabel!.text = familyMemberRow.name
-        cell.detailTextLabel?.text = ">"
-//        cell.imageView?.image = UIImage(named: familyMemberRow.imageName)
+        let playerForThisParticularRow = arrayOfPlayers[indexPath.row]
+        cell.update(with: playerForThisParticularRow)
+        
         return cell
     }
-    
-    
-    @IBSegueAction func segueFromCellToDetail(_ coder: NSCoder, sender: Any?) -> DetailViewController? {
-        
-        guard let selectedRow = tableView.indexPathForSelectedRow else { return nil }
-            let selectedFamilyMember = familyMembers[selectedRow.row]
-        tableView.deselectRow(at: selectedRow, animated: true)
-        return DetailViewController(familyMember: selectedFamilyMember, coder: coder)
-    }
-    
+
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
