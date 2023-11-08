@@ -14,5 +14,3 @@ struct Player {
 }
 
 var arrayOfPlayers: [Player] = []
-
-

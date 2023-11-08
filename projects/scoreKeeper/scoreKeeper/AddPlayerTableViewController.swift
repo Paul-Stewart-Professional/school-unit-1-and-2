@@ -1,5 +1,5 @@
 //
-//  PlayersTableViewController.swift
+//  AddPlayerTableViewController.swift
 //  scoreKeeper
 //
 //  Created by Paul Stewart on 11/8/23.
@@ -7,9 +7,15 @@
 
 import UIKit
 
-class PlayersTableViewController: UITableViewController {
+class AddPlayerTableViewController: UITableViewController {
     
-        override func viewDidLoad() {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var scoreTextField: UITextField!
+    
+    @IBOutlet weak var createButton: UIButton!
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -17,13 +23,24 @@ class PlayersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.rowHeight = 70
+    }
+    var player: Player?
+    init?(coder: NSCoder, player: Player?) {
+        self.player = player
+        super.init(coder: coder)
     }
     
-    @IBAction func unwindToPlayersScores(segue: UIStoryboardSegue) {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else { return }
-        let sourceViewController = segue.source as? AddPlayerTableViewController,
+        let name = nameTextField.text
         
+        //you need to either change the textfield to a stepper or guarantee that they can only put in numbers.
+        let score = scoreTextField.text
+        player = Player(name: name!, score: score)
         
     }
 
@@ -36,19 +53,18 @@ class PlayersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return arrayOfPlayers.count
+        return 0
     }
 
-
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerScoresCell", for: indexPath) as! PlayerScoresTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        let playerForThisParticularRow = arrayOfPlayers[indexPath.row]
-        cell.update(with: playerForThisParticularRow)
-        
+        // Configure the cell...
+
         return cell
     }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.

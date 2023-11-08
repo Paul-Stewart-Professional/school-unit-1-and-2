@@ -16,6 +16,7 @@
 		0289CEC72AFBDA6C00EEB480 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289CEC62AFBDA6C00EEB480 /* game.swift */; };
 		0289CEC92AFBDB5D00EEB480 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289CEC82AFBDB5D00EEB480 /* PlayersTableViewController.swift */; };
 		0289CECB2AFBDFD700EEB480 /* PlayerScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289CECA2AFBDFD700EEB480 /* PlayerScoresTableViewCell.swift */; };
+		0289CECD2AFBF5C000EEB480 /* AddPlayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289CECC2AFBF5C000EEB480 /* AddPlayerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0289CEC62AFBDA6C00EEB480 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 		0289CEC82AFBDB5D00EEB480 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		0289CECA2AFBDFD700EEB480 /* PlayerScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoresTableViewCell.swift; sourceTree = "<group>"; };
+		0289CECC2AFBF5C000EEB480 /* AddPlayerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0289CEB02AFBD9D200EEB480 /* AppDelegate.swift */,
 				0289CEB22AFBD9D200EEB480 /* SceneDelegate.swift */,
 				0289CEB62AFBD9D200EEB480 /* Main.storyboard */,
+				0289CECC2AFBF5C000EEB480 /* AddPlayerTableViewController.swift */,
 				0289CEC82AFBDB5D00EEB480 /* PlayersTableViewController.swift */,
 				0289CEC62AFBDA6C00EEB480 /* game.swift */,
 				0289CEC42AFBDA4300EEB480 /* player.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0289CECD2AFBF5C000EEB480 /* AddPlayerTableViewController.swift in Sources */,
 				0289CEC52AFBDA4300EEB480 /* player.swift in Sources */,
 				0289CEC72AFBDA6C00EEB480 /* game.swift in Sources */,
 				0289CEB12AFBD9D200EEB480 /* AppDelegate.swift in Sources */,

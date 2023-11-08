@@ -29,11 +29,12 @@ class PlayerScoresTableViewCell: UITableViewCell {
     
     func update(with player: Player) {
         nameLabel.text = player.name
-        scoreLabel.text = String(Int(scoreStepper.value))
+        scoreLabel.text = String(player.score)
     }
     
     
     @IBAction func scoreStepperTapped(_ sender: Any) {
+        
         
     }
     

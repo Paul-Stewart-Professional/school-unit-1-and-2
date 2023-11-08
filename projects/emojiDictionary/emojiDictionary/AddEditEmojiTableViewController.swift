@@ -34,7 +34,7 @@ class AddEditEmojiTableViewController: UITableViewController {
     }
     
     func updateSaveButtonState() {
-//        let symbolText = symbolTextField.text ?? ""
+        //        let symbolText = symbolTextField.text ?? ""
         let nameText = nameTextField.text ?? ""
         let descriptionText = descriptionTextField.text ?? ""
         let usageText = usageTextField.text ?? ""
