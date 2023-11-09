@@ -11,10 +11,9 @@ class AddPlayerTableViewController: UITableViewController {
     
     
     @IBOutlet weak var nameTextField: UITextField!
-    
-    @IBOutlet weak var scoreTextField: UITextField!
-    
+    @IBOutlet weak var scoreStepper: UIStepper!
     @IBOutlet weak var createButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +22,7 @@ class AddPlayerTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     var player: Player?
     init?(coder: NSCoder, player: Player?) {
@@ -37,10 +37,8 @@ class AddPlayerTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else { return }
         let name = nameTextField.text
-        
-        //you need to either change the textfield to a stepper or guarantee that they can only put in numbers.
-        let score = scoreTextField.text
-        player = Player(name: name!, score: score)
+        let score = scoreStepper.value
+        player = Player(name: name!, score: Int(score))
         
     }
 

@@ -125,37 +125,38 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Score" id="EtA-uK-W7V">
-                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9rO-QI-Vl8">
-                                        <rect key="frame" x="0.0" y="162" width="393" height="34"/>
+                                        <rect key="frame" x="0.0" y="84" width="393" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9rO-QI-Vl8" id="cIG-Wx-bTU">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNP-oe-rRZ">
-                                                    <rect key="frame" x="16" y="0.0" width="361" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="vZg-Pn-e26">
+                                                    <rect key="frame" x="54" y="6" width="277.33333333333331" height="32"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZK-Sh-PNR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Ww-sN-zMe">
+                                                            <rect key="frame" x="98.333333333333314" y="0.0" width="94" height="32"/>
+                                                        </stepper>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-Ub-del">
+                                                            <rect key="frame" x="246.33333333333337" y="0.0" width="31" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="dNP-oe-rRZ" secondAttribute="bottom" id="NRK-AX-foG"/>
-                                                <constraint firstItem="dNP-oe-rRZ" firstAttribute="top" secondItem="cIG-Wx-bTU" secondAttribute="top" id="Rwc-8i-pEY"/>
-                                                <constraint firstAttribute="trailing" secondItem="dNP-oe-rRZ" secondAttribute="trailing" constant="16" id="hEs-k2-5Jn"/>
-                                                <constraint firstItem="dNP-oe-rRZ" firstAttribute="leading" secondItem="cIG-Wx-bTU" secondAttribute="leading" constant="16" id="kWY-TF-MgW"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="9MN-0m-Zes">
-                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cLk-5b-5bc">
-                                        <rect key="frame" x="0.0" y="274" width="393" height="44"/>
+                                        <rect key="frame" x="0.0" y="128" width="393" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cLk-5b-5bc" id="bWI-l1-Iai">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -191,7 +192,7 @@
                     <connections>
                         <outlet property="createButton" destination="WDf-U6-UWO" id="UgI-e5-H9F"/>
                         <outlet property="nameTextField" destination="J2c-Kz-kP2" id="0XL-Cy-BeE"/>
-                        <outlet property="scoreTextField" destination="dNP-oe-rRZ" id="h1J-LJ-M69"/>
+                        <outlet property="scoreStepper" destination="7Ww-sN-zMe" id="xFf-2n-JI7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-EP-uh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,7 +234,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a8b-P4-b1y"/>
+        <segue reference="8kx-5a-hEu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
