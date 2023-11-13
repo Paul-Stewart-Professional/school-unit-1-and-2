@@ -8,9 +8,11 @@
 import UIKit
 
 class PlayersTableViewController: UITableViewController {
+    
     var sortedPlayers: [Player?] {
         arrayOfPlayers.sorted(by: >)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,20 +35,14 @@ class PlayersTableViewController: UITableViewController {
         let newIndexPath = IndexPath(row: arrayOfPlayers.count, section: 0)
         arrayOfPlayers.append(player)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
-        arrayOfPlayers.sort(by: >)
+        tableView.reloadData()
     }
     
     
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return arrayOfPlayers.count
     }
     
@@ -54,17 +50,22 @@ class PlayersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerScoresCell", for: indexPath) as! PlayerScoresTableViewCell
         
-        let playerForThisParticularRow = arrayOfPlayers[indexPath.row]
-        cell.update(with: playerForThisParticularRow, delegate: self)
+        let playerForThisParticularRow = sortedPlayers[indexPath.row]
+        cell.update(with: playerForThisParticularRow)
+        cell.delegate = self
         return cell
     }
 }
 
 extension PlayersTableViewController: PlayerScoresTableViewCellDelegate {
     func updatePlayerScore(_ player: Player, newScore: Int) {
-        if let index = arrayOfPlayers.firstIndex(where: { $0 == player }) {
+        if let index = arrayOfPlayers.firstIndex(of: player) {
+            print("Player: \(player)")
+            print("array of players: \(arrayOfPlayers)")
+            print("Index: \(index)")
             arrayOfPlayers[index].score = newScore
-            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+            print("New score: \(newScore)")
+            tableView.reloadData()
         }
     }
 }

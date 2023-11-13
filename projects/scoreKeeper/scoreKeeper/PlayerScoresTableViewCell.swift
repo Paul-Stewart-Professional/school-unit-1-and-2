@@ -16,7 +16,7 @@ class PlayerScoresTableViewCell: UITableViewCell {
     
     
     weak var delegate: PlayerScoresTableViewCellDelegate?
-        var player: Player?
+    var player: Player?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,14 +34,12 @@ class PlayerScoresTableViewCell: UITableViewCell {
 //        scoreLabel.text = String(player.score)
 //        scoreStepper.value = Double(player.score)
 //    }
-    func update(with player: Player?, delegate: PlayerScoresTableViewCellDelegate?) {
+    func update(with player: Player?) {
             guard let player = player else {
-                // Handle the case where the player is nil
                 return
             }
 
             self.player = player
-            self.delegate = delegate
             nameLabel.text = player.name
             scoreLabel.text = String(player.score)
             scoreStepper.value = Double(player.score)

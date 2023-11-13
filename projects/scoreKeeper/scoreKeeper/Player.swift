@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct Player: Comparable {
+struct Player: Equatable, Comparable {
     static func < (lhs: Player, rhs: Player) -> Bool {
-        lhs.score > rhs.score
+        lhs.score < rhs.score
     }
     static func == (lhs: Player, rhs: Player) -> Bool {
-        lhs.score == rhs.score
+        lhs.name == rhs.name
     }
     
     var name: String
