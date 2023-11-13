@@ -13,16 +13,16 @@ class AddPlayerTableViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scoreStepper: UIStepper!
     @IBOutlet weak var createButton: UIButton!
-    
+    @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        scoreLabel.text = "0"
+        createButtonIsEnabled()
     }
     var player: Player?
     init?(coder: NSCoder, player: Player?) {
@@ -30,28 +30,48 @@ class AddPlayerTableViewController: UITableViewController {
         super.init(coder: coder)
     }
     
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.player = nil
+        super.init(coder: coder)
+    }
+    
+    @IBAction func nameTextFieldEditingChanged(_ sender: Any) {
+        createButtonIsEnabled()
+    }
+    
+    func createButtonIsEnabled() {
+        if nameTextField.text != nil {
+            createButton.isEnabled = true
+        } else {
+            createButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func stepperValueChanged(_ sender: Any) {
+        scoreLabel.text = String((Int(scoreStepper.value)))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "saveUnwind" else { return }
-        let name = nameTextField.text
+        guard let name = nameTextField.text,
+        segue.identifier == "saveUnwind" else { return }
         let score = scoreStepper.value
-        player = Player(name: name!, score: Int(score))
-        
+        player = Player(name: name, score: Int(score))
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
 
     /*

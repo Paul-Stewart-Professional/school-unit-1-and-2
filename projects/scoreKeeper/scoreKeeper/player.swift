@@ -8,7 +8,14 @@
 import Foundation
 
 
-struct Player {
+struct Player: Comparable {
+    static func < (lhs: Player, rhs: Player) -> Bool {
+        lhs.score > rhs.score
+    }
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        lhs.score == rhs.score
+    }
+    
     var name: String
     var score: Int
 }

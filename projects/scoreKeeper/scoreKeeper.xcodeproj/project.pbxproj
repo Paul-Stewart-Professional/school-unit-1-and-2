@@ -48,7 +48,6 @@
 		0289CEA42AFBD9D200EEB480 = {
 			isa = PBXGroup;
 			children = (
-				0289CECA2AFBDFD700EEB480 /* PlayerScoresTableViewCell.swift */,
 				0289CEAF2AFBD9D200EEB480 /* scoreKeeper */,
 				0289CEAE2AFBD9D200EEB480 /* Products */,
 			);
@@ -70,6 +69,7 @@
 				0289CEB62AFBD9D200EEB480 /* Main.storyboard */,
 				0289CECC2AFBF5C000EEB480 /* AddPlayerTableViewController.swift */,
 				0289CEC82AFBDB5D00EEB480 /* PlayersTableViewController.swift */,
+				0289CECA2AFBDFD700EEB480 /* PlayerScoresTableViewCell.swift */,
 				0289CEC62AFBDA6C00EEB480 /* game.swift */,
 				0289CEC42AFBDA4300EEB480 /* player.swift */,
 				0289CEB92AFBD9D400EEB480 /* Assets.xcassets */,
