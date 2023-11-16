@@ -15,6 +15,7 @@
 		02A5C8272AF94FE5001DD445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A5C8252AF94FE5001DD445 /* Main.storyboard */; };
 		02A5C8292AF94FE6001DD445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A5C8282AF94FE6001DD445 /* Assets.xcassets */; };
 		02A5C82C2AF94FE6001DD445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A5C82A2AF94FE6001DD445 /* LaunchScreen.storyboard */; };
+		02DBCA102B053247001677F1 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DBCA0F2B053247001677F1 /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		02A5C8282AF94FE6001DD445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02A5C82B2AF94FE6001DD445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A5C82D2AF94FE6001DD445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02DBCA0F2B053247001677F1 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		02A5C8132AF94FE5001DD445 = {
 			isa = PBXGroup;
 			children = (
+				02DBCA0F2B053247001677F1 /* ToDoCell.swift */,
 				0289CED22B03D71C00EEB480 /* NewToDoTableViewController.swift */,
 				0289CED02B03C8DD00EEB480 /* ToDoTableViewController.swift */,
 				0289CECE2B03C70000EEB480 /* ToDo.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0289CED32B03D71C00EEB480 /* NewToDoTableViewController.swift in Sources */,
+				02DBCA102B053247001677F1 /* ToDoCell.swift in Sources */,
 				0289CECF2B03C70000EEB480 /* ToDo.swift in Sources */,
 				0289CED12B03C8DD00EEB480 /* ToDoTableViewController.swift in Sources */,
 				02A5C8202AF94FE5001DD445 /* AppDelegate.swift in Sources */,

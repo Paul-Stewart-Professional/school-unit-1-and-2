@@ -89,11 +89,19 @@ class NewToDoTableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         
         guard segue.identifier == "saveUnwind" else { return }
-        let title = titleTextField.text!
-        let isComplete = isCompleteButton.isSelected
-        let dueDate = dueDatePickerView.date
-        let notes = notesTextView.text
-        todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
+        if todo != nil {
+            // know that you're editing
+            todo?.title = titleTextField.text!
+            todo?.isComplete = isCompleteButton.isSelected
+            todo?.dueDate = dueDatePickerView.date
+            todo?.notes = notesTextView.text
+        } else {
+            let title = titleTextField.text!
+            let isComplete = isCompleteButton.isSelected
+            let dueDate = dueDatePickerView.date
+            let notes = notesTextView.text
+            todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
+        }
     }
 }
 
