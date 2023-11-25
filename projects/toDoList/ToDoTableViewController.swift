@@ -7,16 +7,8 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
-    func checkMarkTapped(sender: ToDoCell) {
-        if let indexPath = tableView.indexPath(for: sender) {
-            var todo = todos[indexPath.row]
-            todo.isComplete.toggle()
-            todos[indexPath.row] = todo
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-            ToDo.saveToDos(todos)
-        }
-    }
+class ToDoTableViewController: UITableViewController {
+    
     
     
     var todos = [ToDo]()
@@ -73,14 +65,27 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     }
     
     
+    func checkMarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var todo = todos[indexPath.row]
+            todo.isComplete.toggle()
+            todos[indexPath.row] = todo
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDos(todos)
+        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as! ToDoCell
         
         // Configure the cell...
         let todo = todos[indexPath.row]
         cell.toDoLabel?.text = todo.title
-        cell.isDoneButton.isSelected = todo.isComplete 
-        cell.delegate = self
+        cell.isDoneButton.isSelected = todo.isComplete
+        cell.onComplete = {
+            self.checkMarkTapped(sender: cell)
+        }
         return cell
     }
     
